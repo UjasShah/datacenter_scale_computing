@@ -1,1 +1,0 @@
-This repo is for howework submissions for the CSCI 5253-Datacenter Scale Computing Class at CU Boulder.
