@@ -30,5 +30,6 @@ CREATE TABLE IF NOT EXISTS outcomes_fact (
     animal_id VARCHAR REFERENCES animal_dim(animal_id),
     date_id INT REFERENCES date_dim(date_id),
     outcome_type_id INT REFERENCES outcome_dim(outcome_type_id),
-    sex_status_id INT REFERENCES sex_status_dim(sex_status_id)
+    sex_status_id INT REFERENCES sex_status_dim(sex_status_id),
+    age_on_outcome INT
 );

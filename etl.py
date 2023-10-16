@@ -2,7 +2,7 @@
 import pandas as pd
 import psycopg2
 
-print('Starting script')
+print('Starting ETL script')
 
 url = "https://shelterdata.s3.amazonaws.com/shelter1000_new.csv"
 df = pd.read_csv(url)
@@ -62,6 +62,10 @@ outcomes_fact = pd.merge(outcomes_fact, outcome_dim, left_on = 'outcome', right_
 outcomes_fact = pd.merge(outcomes_fact, sex_status_dim, on='sex_status', how='left')
 outcomes_fact.drop(columns= ['outcome_type', 'outcome','sex_status'], inplace=True)
 outcomes_fact.rename(columns={'ts':'date_id'}, inplace=True)
+outcomes_fact = pd.merge(outcomes_fact, animal_dim[['animal_id', 'dob']], on='animal_id', how='left')
+outcomes_fact['age_on_outcome'] = ((pd.to_datetime(outcomes_fact.date_id.astype(str)) - outcomes_fact.dob) / pd.Timedelta(days=365.2425)).astype(int)
+outcomes_fact.drop(columns=['dob'], inplace=True)
+
 
 conn = psycopg2.connect(
     host="db",
@@ -94,8 +98,8 @@ for index, row in animal_dim.iterrows():
     
 for index, row in outcomes_fact.iterrows():
     cur.execute(
-        "INSERT INTO outcomes_fact (animal_id, date_id, outcome_type_id, sex_status_id) VALUES (%s, %s, %s, %s)",
-        (row['animal_id'], row['date_id'], row['outcome_type_id'], row['sex_status_id']))
+        "INSERT INTO outcomes_fact (animal_id, date_id, outcome_type_id, sex_status_id, age_on_outcome) VALUES (%s, %s, %s, %s, %s)",
+        (row['animal_id'], row['date_id'], row['outcome_type_id'], row['sex_status_id'], row['age_on_outcome']))
 
     
 conn.commit()
@@ -116,4 +120,4 @@ conn.close()
 
 # output.to_csv(args.csv_to_write, index = False)
 
-print('Finished script')
+print('Finished ETL script')
