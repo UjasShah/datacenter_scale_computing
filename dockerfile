@@ -1,8 +1,8 @@
 FROM python 
 
 WORKDIR /app
-COPY script.py script.py
+COPY etl.py etl.py
 
-RUN pip install pandas
+RUN pip install pandas psycopg2-binary
 
-ENTRYPOINT [ "python", "script.py"]
+ENTRYPOINT [ "python", "etl.py"]
