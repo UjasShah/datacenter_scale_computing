@@ -1,0 +1,17 @@
+[2023-11-21T00:35:09.545+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.load scheduled__2023-11-12T00:00:00+00:00 [queued]>
+[2023-11-21T00:35:09.635+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.load scheduled__2023-11-12T00:00:00+00:00 [queued]>
+[2023-11-21T00:35:09.645+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-21T00:35:09.859+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): load> on 2023-11-12 00:00:00+00:00
+[2023-11-21T00:35:09.958+0000] {standard_task_runner.py:57} INFO - Started process 269 to run task
+[2023-11-21T00:35:10.098+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'load', 'scheduled__2023-11-12T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmpr1mb2z0d']
+[2023-11-21T00:35:10.154+0000] {standard_task_runner.py:85} INFO - Job 11: Subtask load
+[2023-11-21T00:35:11.409+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.load scheduled__2023-11-12T00:00:00+00:00 [running]> on host e947633e76f3
+[2023-11-21T00:35:35.023+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='load' AIRFLOW_CTX_EXECUTION_DATE='2023-11-12T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-12T00:00:00+00:00'
+[2023-11-21T00:49:30.095+0000] {local_task_job_runner.py:294} WARNING - State of this instance has been externally set to upstream_failed. Terminating instance.
+[2023-11-21T00:49:33.926+0000] {process_utils.py:131} INFO - Sending 15 to group 269. PIDs of all processes in the group: [269]
+[2023-11-21T00:49:34.126+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 269
+[2023-11-21T00:49:37.448+0000] {taskinstance.py:1632} ERROR - Received SIGTERM. Terminating subprocesses.
+[2023-11-21T00:50:35.359+0000] {process_utils.py:149} WARNING - process psutil.Process(pid=269, name='airflow task ru', status='running', started='00:35:09') did not respond to SIGTERM. Trying SIGKILL
+[2023-11-21T00:50:46.385+0000] {process_utils.py:86} INFO - Sending the signal 9 to group 269
+[2023-11-21T00:50:50.699+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=269, name='airflow task ru', status='terminated', exitcode=<Negsignal.SIGKILL: -9>, started='00:35:09') (269) terminated with exit code -9
+[2023-11-21T00:50:51.914+0000] {standard_task_runner.py:172} ERROR - Job 11 was killed before it finished (likely due to running out of memory)

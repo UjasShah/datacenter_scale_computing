@@ -1,0 +1,32 @@
+[2023-11-20T23:02:14.968+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.transform manual__2023-11-20T22:44:55.450389+00:00 [queued]>
+[2023-11-20T23:02:14.985+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.transform manual__2023-11-20T22:44:55.450389+00:00 [queued]>
+[2023-11-20T23:02:14.986+0000] {taskinstance.py:1361} INFO - Starting attempt 3 of 3
+[2023-11-20T23:02:15.003+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): transform> on 2023-11-20 22:44:55.450389+00:00
+[2023-11-20T23:02:15.012+0000] {standard_task_runner.py:57} INFO - Started process 2387 to run task
+[2023-11-20T23:02:15.017+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'transform', 'manual__2023-11-20T22:44:55.450389+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmpxgi5ajc6']
+[2023-11-20T23:02:15.022+0000] {standard_task_runner.py:85} INFO - Job 17: Subtask transform
+[2023-11-20T23:02:15.120+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.transform manual__2023-11-20T22:44:55.450389+00:00 [running]> on host daf7997f8700
+[2023-11-20T23:02:16.785+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2023-11-20T22:44:55.450389+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-20T22:44:55.450389+00:00'
+[2023-11-20T23:02:16.799+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl_scripts/transform.py", line 20, in transform_data
+    new_data = pd.read_csv(source_csv)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 577, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+    self.handles = get_handle(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/common.py", line 859, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/airflow/data/2023-11-20/downloads/outcomes.csv'
+[2023-11-20T23:02:16.837+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=outcomes_dag, task_id=transform, execution_date=20231120T224455, start_date=20231120T230214, end_date=20231120T230216
+[2023-11-20T23:02:16.881+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 17 for task transform ([Errno 2] No such file or directory: '/opt/airflow/data/2023-11-20/downloads/outcomes.csv'; 2387)
+[2023-11-20T23:02:16.949+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-20T23:02:16.971+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,16 @@
+[2023-11-21T00:29:51.849+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.transform scheduled__2023-11-12T00:00:00+00:00 [queued]>
+[2023-11-21T00:29:51.877+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.transform scheduled__2023-11-12T00:00:00+00:00 [queued]>
+[2023-11-21T00:29:51.879+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-21T00:29:52.007+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): transform> on 2023-11-12 00:00:00+00:00
+[2023-11-21T00:29:52.043+0000] {standard_task_runner.py:57} INFO - Started process 179 to run task
+[2023-11-21T00:29:52.061+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'transform', 'scheduled__2023-11-12T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmp6hc_e4jc']
+[2023-11-21T00:29:52.071+0000] {standard_task_runner.py:85} INFO - Job 6: Subtask transform
+[2023-11-21T00:29:52.585+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.transform scheduled__2023-11-12T00:00:00+00:00 [running]> on host e947633e76f3
+[2023-11-21T00:29:57.498+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2023-11-12T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-12T00:00:00+00:00'
+[2023-11-21T00:30:02.631+0000] {warnings.py:109} WARNING - /opt/***/dags/etl_scripts/transform.py:57: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  data['ts'] = pd.to_datetime(data.DateTime)
+
+[2023-11-21T00:34:30.619+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-11-21T00:34:33.042+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=outcomes_dag, task_id=transform, execution_date=20231112T000000, start_date=20231121T002951, end_date=20231121T003433
+[2023-11-21T00:34:34.774+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-21T00:34:39.394+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

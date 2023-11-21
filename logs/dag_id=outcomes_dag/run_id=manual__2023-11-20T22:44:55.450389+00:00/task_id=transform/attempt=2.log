@@ -1,0 +1,66 @@
+[2023-11-20T22:46:50.493+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.transform manual__2023-11-20T22:44:55.450389+00:00 [queued]>
+[2023-11-20T22:46:50.516+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.transform manual__2023-11-20T22:44:55.450389+00:00 [queued]>
+[2023-11-20T22:46:50.517+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2023-11-20T22:46:50.536+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): transform> on 2023-11-20 22:44:55.450389+00:00
+[2023-11-20T22:46:50.544+0000] {standard_task_runner.py:57} INFO - Started process 2171 to run task
+[2023-11-20T22:46:50.550+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'transform', 'manual__2023-11-20T22:44:55.450389+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmpginb3xhs']
+[2023-11-20T22:46:50.554+0000] {standard_task_runner.py:85} INFO - Job 16: Subtask transform
+[2023-11-20T22:46:50.629+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.transform manual__2023-11-20T22:44:55.450389+00:00 [running]> on host daf7997f8700
+[2023-11-20T22:46:51.443+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2023-11-20T22:44:55.450389+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-20T22:44:55.450389+00:00'
+[2023-11-20T22:46:54.232+0000] {warnings.py:109} WARNING - /opt/***/dags/etl_scripts/transform.py:58: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  data['ts'] = pd.to_datetime(data.DateTime)
+
+[2023-11-20T22:48:05.029+0000] {python.py:194} INFO - Done. Returned value was: {'dim_animals':        animal_id  ...              color
+0        A794011  ...  Brown Tabby/White
+1        A776359  ...        White/Brown
+2        A821648  ...               Gray
+3        A720371  ...               Buff
+4        A674754  ...       Orange Tabby
+...          ...  ...                ...
+157191   A861635  ...              Brown
+157192   A860822  ...         Lynx Point
+157195   A856973  ...               Blue
+157197   A852775  ...             Tortie
+157198   A854626  ...       Orange Tabby
+
+[141007 rows x 7 columns], 'dim_dates':          date_id        date  year  month  day
+0       20190508  2019-05-08  2019      5    8
+1       20180718  2018-07-18  2018      7   18
+2       20200816  2020-08-16  2020      8   16
+3       20160213  2016-02-13  2016      2   13
+4       20140318  2014-03-18  2014      3   18
+...          ...         ...   ...    ...  ...
+154941  20231116  2023-11-16  2023     11   16
+154968  20231117  2023-11-17  2023     11   17
+154998  20231118  2023-11-18  2023     11   18
+155017  20231119  2023-11-19  2023     11   19
+155044  20231120  2023-11-20  2023     11   20
+
+[3691 rows x 5 columns], 'dim_outcome_types':        outcome_type  outcome_type_id
+0         Rto-Adopt                1
+1          Adoption                2
+2        Euthanasia                3
+3          Transfer                4
+4   Return to Owner                5
+5              Died                6
+6          Disposal                7
+7           Missing                8
+8          Relocate                9
+9               N/A               10
+10           Stolen               11, 'fct_outcomes':        animal_id   date_id      time  outcome_type_id outcome_subtype is_fixed
+0        A794011  20190508  18:20:00              1.0             NaN     True
+1        A776359  20180718  16:02:00              2.0             NaN     True
+2        A821648  20200816  11:38:00              3.0             NaN      NaN
+3        A720371  20160213  17:59:00              2.0             NaN     True
+4        A674754  20140318  11:47:00              4.0         Partner    False
+...          ...       ...       ...              ...             ...      ...
+157194   A859974  20220816  11:42:00              2.0             NaN     True
+157195   A856973  20220611  15:39:00              2.0             NaN     True
+157196   A852036  20220317  17:22:00              2.0             NaN     True
+157197   A852775  20220518  14:13:00              2.0          Foster     True
+157198   A854626  20220503  16:10:00              2.0          Foster     True
+
+[157199 rows x 6 columns]}
+[2023-11-20T22:48:20.220+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=outcomes_dag, task_id=transform, execution_date=20231120T224455, start_date=20231120T224650, end_date=20231120T224820
+[2023-11-20T22:48:20.804+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-20T22:48:20.984+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

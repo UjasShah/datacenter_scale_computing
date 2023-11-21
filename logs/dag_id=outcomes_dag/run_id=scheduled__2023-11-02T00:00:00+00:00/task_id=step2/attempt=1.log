@@ -1,0 +1,17 @@
+[2023-11-20T20:09:23.272+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.step2 scheduled__2023-11-02T00:00:00+00:00 [queued]>
+[2023-11-20T20:09:25.413+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.step2 scheduled__2023-11-02T00:00:00+00:00 [queued]>
+[2023-11-20T20:09:25.415+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-20T20:09:26.449+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): step2> on 2023-11-02 00:00:00+00:00
+[2023-11-20T20:09:26.529+0000] {standard_task_runner.py:57} INFO - Started process 343 to run task
+[2023-11-20T20:09:26.632+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'step2', 'scheduled__2023-11-02T00:00:00+00:00', '--job-id', '19', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmpv8367gdu']
+[2023-11-20T20:09:26.883+0000] {standard_task_runner.py:85} INFO - Job 19: Subtask step2
+[2023-11-20T20:12:16.880+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.step2 scheduled__2023-11-02T00:00:00+00:00 [running]> on host 8e6ddc1dc227
+[2023-11-20T20:12:23.753+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='step2' AIRFLOW_CTX_EXECUTION_DATE='2023-11-02T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-02T00:00:00+00:00'
+[2023-11-20T20:12:23.897+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-11-20T20:12:24.016+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'echo 2']
+[2023-11-20T20:12:24.354+0000] {subprocess.py:86} INFO - Output:
+[2023-11-20T20:12:24.381+0000] {subprocess.py:93} INFO - 2
+[2023-11-20T20:12:24.383+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-11-20T20:12:25.152+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=outcomes_dag, task_id=step2, execution_date=20231102T000000, start_date=20231120T200923, end_date=20231120T201225
+[2023-11-20T20:12:26.975+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-20T20:12:28.087+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

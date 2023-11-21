@@ -1,0 +1,20 @@
+[2023-11-20T22:45:15.018+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.transform manual__2023-11-20T22:44:55.450389+00:00 [queued]>
+[2023-11-20T22:45:15.045+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.transform manual__2023-11-20T22:44:55.450389+00:00 [queued]>
+[2023-11-20T22:45:15.046+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-20T22:45:15.080+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): transform> on 2023-11-20 22:44:55.450389+00:00
+[2023-11-20T22:45:15.090+0000] {standard_task_runner.py:57} INFO - Started process 2152 to run task
+[2023-11-20T22:45:15.101+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'transform', 'manual__2023-11-20T22:44:55.450389+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmp3cuhkka3']
+[2023-11-20T22:45:15.111+0000] {standard_task_runner.py:85} INFO - Job 15: Subtask transform
+[2023-11-20T22:45:15.229+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.transform manual__2023-11-20T22:44:55.450389+00:00 [running]> on host daf7997f8700
+[2023-11-20T22:45:33.097+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2023-11-20T22:44:55.450389+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-20T22:44:55.450389+00:00'
+[2023-11-20T22:45:33.109+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+TypeError: transform_data() missing 1 required positional argument: 'source_csv'
+[2023-11-20T22:45:33.137+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=outcomes_dag, task_id=transform, execution_date=20231120T224455, start_date=20231120T224515, end_date=20231120T224533
+[2023-11-20T22:45:33.306+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 15 for task transform (transform_data() missing 1 required positional argument: 'source_csv'; 2152)
+[2023-11-20T22:45:33.401+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-20T22:45:33.657+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
