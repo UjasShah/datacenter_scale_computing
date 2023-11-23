@@ -13,8 +13,8 @@ CSV_TARGET_FILE = CSV_TARGET_DIR + '/outcomes.csv'
 
 with DAG (
     dag_id = "outcomes_dag",
-    start_date = datetime(2023, 11, 1),
-    schedule_interval = "@weekly"
+    start_date = datetime(2023, 11, 20),
+    schedule_interval = "@daily"
 ) as dag:
     
     extract = BashOperator(
@@ -69,4 +69,5 @@ with DAG (
             'table_name': 'fct_outcomes'
         }
     )
+
     extract >> transform >> [load_animals_dim, load_dates_dim, load_outcomes_dates_dim] >> load_outcome_fact
