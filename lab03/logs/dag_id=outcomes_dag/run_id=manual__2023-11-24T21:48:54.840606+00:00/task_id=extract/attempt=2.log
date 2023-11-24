@@ -1,0 +1,36 @@
+[2023-11-24T21:55:23.564+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.extract manual__2023-11-24T21:48:54.840606+00:00 [queued]>
+[2023-11-24T21:55:23.575+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.extract manual__2023-11-24T21:48:54.840606+00:00 [queued]>
+[2023-11-24T21:55:23.575+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2023-11-24T21:55:23.792+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): extract> on 2023-11-24 21:48:54.840606+00:00
+[2023-11-24T21:55:23.800+0000] {standard_task_runner.py:57} INFO - Started process 219 to run task
+[2023-11-24T21:55:23.806+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'extract', 'manual__2023-11-24T21:48:54.840606+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmp_97kx5zp']
+[2023-11-24T21:55:23.811+0000] {standard_task_runner.py:85} INFO - Job 16: Subtask extract
+[2023-11-24T21:55:23.872+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.extract manual__2023-11-24T21:48:54.840606+00:00 [running]> on host 30eca782d34c
+[2023-11-24T21:55:23.961+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2023-11-24T21:48:54.840606+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-24T21:48:54.840606+00:00'
+[2023-11-24T21:55:24.817+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl_scripts/extract.py", line 35, in extract_data
+    storage_client = storage.Client('oceanic-hangout-406022')
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/client.py", line 172, in __init__
+    super(Client, self).__init__(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/client/__init__.py", line 321, in __init__
+    Client.__init__(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/client/__init__.py", line 178, in __init__
+    credentials, _ = google.auth.default(scopes=scopes)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/auth/_default.py", line 657, in default
+    credentials, project_id = checker()
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/auth/_default.py", line 650, in <lambda>
+    lambda: _get_explicit_environ_credentials(quota_project_id=quota_project_id),
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/auth/_default.py", line 270, in _get_explicit_environ_credentials
+    credentials, project_id = load_credentials_from_file(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/auth/_default.py", line 114, in load_credentials_from_file
+    raise exceptions.DefaultCredentialsError(
+google.auth.exceptions.DefaultCredentialsError: File opt/***/dags/etl_scripts/oceanic-hangout-406022-fd958fa4d302.json was not found.
+[2023-11-24T21:55:24.831+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=outcomes_dag, task_id=extract, execution_date=20231124T214854, start_date=20231124T215523, end_date=20231124T215524
+[2023-11-24T21:55:24.849+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 16 for task extract (File opt/***/dags/etl_scripts/oceanic-hangout-406022-fd958fa4d302.json was not found.; 219)
+[2023-11-24T21:55:24.871+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-24T21:55:24.897+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

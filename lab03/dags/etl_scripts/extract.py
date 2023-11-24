@@ -2,16 +2,13 @@ from sodapy import Socrata
 import pandas as pd
 import os
 from dotenv import load_dotenv
+from google.cloud import storage
 
 load_dotenv() #load environment variables
 
-AIRFLOW_HOME = os.environ.get('AIRFLOW_HOME', 'opt/airflow')
-EXTRACT_DIR = os.path.join(AIRFLOW_HOME, 'data', 'extracted')
-
-# Create the directory if it doesn't exist
-os.makedirs(EXTRACT_DIR, exist_ok=True)
-
-# assert os.getenv('APP_TOKEN') is not None, "You must set APP_TOKEN in your environment variables"
+storage_client = storage.Client('oceanic-hangout-406022')
+bucket = storage_client.bucket('outcomes_bucket')
+folder_name = 'extracted/'
 
 def extract_data(date):
     client = Socrata("data.austintexas.gov",
@@ -20,7 +17,8 @@ def extract_data(date):
                      password = os.getenv('PASSWORD'))
     
     # check if EXTRACT_DIR is empty
-    if os.listdir(EXTRACT_DIR) == []:
+    blobs = bucket.list_blobs(prefix=folder_name)
+    if len(list(blobs)) == 0:
         #extract all data till the date
         results = client.get("9t4d-g238", where = f"datetime <= '{date}'", limit = 2000) #CHANGE THIS NUMBER
     else:
@@ -28,4 +26,7 @@ def extract_data(date):
         results = client.get("9t4d-g238", where = f"date_trunc_ymd(datetime) = '{date}'")
 
     results_df = pd.DataFrame.from_records(results)
-    results_df.to_csv(os.path.join(EXTRACT_DIR, f"{date}_outcomes.csv"))
+
+    # upload to GCS
+    blob = bucket.blob(f"extracted/{date}_outcomes.csv")
+    blob.upload_from_string(results_df.to_csv(), 'text/csv')
