@@ -1,0 +1,78 @@
+[2023-11-25T20:27:40.597+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.transform scheduled__2023-11-21T00:00:00+00:00 [queued]>
+[2023-11-25T20:27:40.771+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.transform scheduled__2023-11-21T00:00:00+00:00 [queued]>
+[2023-11-25T20:27:40.771+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-25T20:27:40.788+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): transform> on 2023-11-21 00:00:00+00:00
+[2023-11-25T20:27:40.794+0000] {standard_task_runner.py:57} INFO - Started process 108 to run task
+[2023-11-25T20:27:40.798+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'transform', 'scheduled__2023-11-21T00:00:00+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmpfqj8kk8o']
+[2023-11-25T20:27:40.801+0000] {standard_task_runner.py:85} INFO - Job 12: Subtask transform
+[2023-11-25T20:27:40.853+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.transform scheduled__2023-11-21T00:00:00+00:00 [running]> on host 17ac1e2d02c6
+[2023-11-25T20:27:40.928+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2023-11-21T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-21T00:00:00+00:00'
+[2023-11-25T20:27:41.329+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 3653, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 147, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 176, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Name'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl_scripts/transform.py", line 36, in transform_data
+    data = prep_data(data)
+  File "/opt/airflow/dags/etl_scripts/transform.py", line 51, in prep_data
+    data['name'] = data['Name'].str.replace("*","",regex=False)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/frame.py", line 3761, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 3655, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Name'
+[2023-11-25T20:27:41.342+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=outcomes_dag, task_id=transform, execution_date=20231121T000000, start_date=20231125T202740, end_date=20231125T202741
+[2023-11-25T20:27:41.355+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 12 for task transform ('Name'; 108)
+[2023-11-25T20:27:41.375+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-25T20:27:41.391+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-11-26T00:22:07.348+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.transform scheduled__2023-11-21T00:00:00+00:00 [queued]>
+[2023-11-26T00:22:07.360+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.transform scheduled__2023-11-21T00:00:00+00:00 [queued]>
+[2023-11-26T00:22:07.362+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-26T00:22:07.377+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): transform> on 2023-11-21 00:00:00+00:00
+[2023-11-26T00:22:07.382+0000] {standard_task_runner.py:57} INFO - Started process 130 to run task
+[2023-11-26T00:22:07.386+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'transform', 'scheduled__2023-11-21T00:00:00+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmp1i4w6qst']
+[2023-11-26T00:22:07.390+0000] {standard_task_runner.py:85} INFO - Job 18: Subtask transform
+[2023-11-26T00:22:07.444+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.transform scheduled__2023-11-21T00:00:00+00:00 [running]> on host decfc1fe5c09
+[2023-11-26T00:22:07.521+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2023-11-21T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-21T00:00:00+00:00'
+[2023-11-26T00:22:08.250+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-11-26T00:22:08.268+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=outcomes_dag, task_id=transform, execution_date=20231121T000000, start_date=20231126T002207, end_date=20231126T002208
+[2023-11-26T00:22:08.289+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-26T00:22:08.328+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-11-26T01:53:13.108+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.transform scheduled__2023-11-21T00:00:00+00:00 [queued]>
+[2023-11-26T01:53:13.121+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.transform scheduled__2023-11-21T00:00:00+00:00 [queued]>
+[2023-11-26T01:53:13.122+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-26T01:53:13.138+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): transform> on 2023-11-21 00:00:00+00:00
+[2023-11-26T01:53:13.145+0000] {standard_task_runner.py:57} INFO - Started process 173 to run task
+[2023-11-26T01:53:13.151+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'transform', 'scheduled__2023-11-21T00:00:00+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmp91ea39cf']
+[2023-11-26T01:53:13.157+0000] {standard_task_runner.py:85} INFO - Job 20: Subtask transform
+[2023-11-26T01:53:13.219+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.transform scheduled__2023-11-21T00:00:00+00:00 [running]> on host 2011df1a4519
+[2023-11-26T01:53:13.327+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2023-11-21T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-21T00:00:00+00:00'
+[2023-11-26T01:53:14.015+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-11-26T01:53:14.032+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=outcomes_dag, task_id=transform, execution_date=20231121T000000, start_date=20231126T015313, end_date=20231126T015314
+[2023-11-26T01:53:14.090+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-26T01:53:14.118+0000] {taskinstance.py:2778} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2023-11-26T02:43:33.226+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.transform scheduled__2023-11-21T00:00:00+00:00 [queued]>
+[2023-11-26T02:43:33.240+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.transform scheduled__2023-11-21T00:00:00+00:00 [queued]>
+[2023-11-26T02:43:33.240+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-26T02:43:33.254+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): transform> on 2023-11-21 00:00:00+00:00
+[2023-11-26T02:43:33.261+0000] {standard_task_runner.py:57} INFO - Started process 180 to run task
+[2023-11-26T02:43:33.265+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'transform', 'scheduled__2023-11-21T00:00:00+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmph3_htmr3']
+[2023-11-26T02:43:33.270+0000] {standard_task_runner.py:85} INFO - Job 30: Subtask transform
+[2023-11-26T02:43:33.341+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.transform scheduled__2023-11-21T00:00:00+00:00 [running]> on host d8c33f99ee50
+[2023-11-26T02:43:33.453+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2023-11-21T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-21T00:00:00+00:00'
+[2023-11-26T02:43:55.736+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-11-26T02:43:55.749+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=outcomes_dag, task_id=transform, execution_date=20231121T000000, start_date=20231126T024333, end_date=20231126T024355
+[2023-11-26T02:43:55.792+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-26T02:43:55.822+0000] {taskinstance.py:2778} INFO - 4 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,28 @@
+[2023-11-26T01:20:56.648+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.load manual__2023-11-26T00:21:04.909924+00:00 [queued]>
+[2023-11-26T01:20:56.662+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.load manual__2023-11-26T00:21:04.909924+00:00 [queued]>
+[2023-11-26T01:20:56.662+0000] {taskinstance.py:1361} INFO - Starting attempt 6 of 6
+[2023-11-26T01:20:56.679+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): load> on 2023-11-26 00:21:04.909924+00:00
+[2023-11-26T01:20:56.695+0000] {standard_task_runner.py:57} INFO - Started process 1069 to run task
+[2023-11-26T01:20:56.699+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'load', 'manual__2023-11-26T00:21:04.909924+00:00', '--job-id', '47', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmpnfieabr7']
+[2023-11-26T01:20:56.707+0000] {standard_task_runner.py:85} INFO - Job 47: Subtask load
+[2023-11-26T01:20:56.779+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.load manual__2023-11-26T00:21:04.909924+00:00 [running]> on host decfc1fe5c09
+[2023-11-26T01:20:56.933+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='load' AIRFLOW_CTX_EXECUTION_DATE='2023-11-26T00:21:04.909924+00:00' AIRFLOW_CTX_TRY_NUMBER='6' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-26T00:21:04.909924+00:00'
+[2023-11-26T01:20:56.940+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl_scripts/load.py", line 10, in load_dim_dates
+    client = bigquery.Client("oceanic-hangout-406022", credentials=credentials)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/bigquery/client.py", line 235, in __init__
+    super(Client, self).__init__(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/client/__init__.py", line 321, in __init__
+    Client.__init__(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/client/__init__.py", line 167, in __init__
+    raise ValueError(_GOOGLE_AUTH_CREDENTIALS_HELP)
+ValueError: This library only supports credentials from google-auth-library-python. See https://google-auth.readthedocs.io/en/latest/ for help on authentication with this library.
+[2023-11-26T01:20:57.160+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=outcomes_dag, task_id=load, execution_date=20231126T002104, start_date=20231126T012056, end_date=20231126T012057
+[2023-11-26T01:20:57.304+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 47 for task load (This library only supports credentials from google-auth-library-python. See https://google-auth.readthedocs.io/en/latest/ for help on authentication with this library.; 1069)
+[2023-11-26T01:20:57.369+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-26T01:20:57.395+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

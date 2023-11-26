@@ -1604,3 +1604,31 @@
 [2023-11-24T23:04:30.186+0000] {logging_mixin.py:154} INFO - [2023-11-24T23:04:30.185+0000] {dag.py:2941} INFO - Sync 1 DAGs
 [2023-11-24T23:04:30.224+0000] {logging_mixin.py:154} INFO - [2023-11-24T23:04:30.223+0000] {dag.py:3722} INFO - Setting next_dagrun for outcomes_dag to 2023-11-24T00:00:00+00:00, run_after=2023-11-25T00:00:00+00:00
 [2023-11-24T23:04:30.261+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/outcomes_dag.py took 3.354 seconds
+[2023-11-24T23:05:00.402+0000] {processor.py:157} INFO - Started process (PID=151) to work on /opt/airflow/dags/outcomes_dag.py
+[2023-11-24T23:05:00.406+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/outcomes_dag.py for tasks to queue
+[2023-11-24T23:05:00.411+0000] {logging_mixin.py:154} INFO - [2023-11-24T23:05:00.411+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/outcomes_dag.py
+[2023-11-24T23:05:04.906+0000] {processor.py:839} INFO - DAG(s) dict_keys(['outcomes_dag']) retrieved from /opt/airflow/dags/outcomes_dag.py
+[2023-11-24T23:05:05.091+0000] {logging_mixin.py:154} INFO - [2023-11-24T23:05:05.089+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-24T23:05:05.164+0000] {logging_mixin.py:154} INFO - [2023-11-24T23:05:05.163+0000] {dag.py:3722} INFO - Setting next_dagrun for outcomes_dag to 2023-11-24T00:00:00+00:00, run_after=2023-11-25T00:00:00+00:00
+[2023-11-24T23:05:05.385+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/outcomes_dag.py took 4.988 seconds
+[2023-11-24T23:05:35.639+0000] {processor.py:157} INFO - Started process (PID=160) to work on /opt/airflow/dags/outcomes_dag.py
+[2023-11-24T23:05:35.642+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/outcomes_dag.py for tasks to queue
+[2023-11-24T23:05:35.656+0000] {logging_mixin.py:154} INFO - [2023-11-24T23:05:35.655+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/outcomes_dag.py
+[2023-11-24T23:05:36.972+0000] {processor.py:839} INFO - DAG(s) dict_keys(['outcomes_dag']) retrieved from /opt/airflow/dags/outcomes_dag.py
+[2023-11-24T23:05:36.997+0000] {logging_mixin.py:154} INFO - [2023-11-24T23:05:36.997+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-24T23:05:37.022+0000] {logging_mixin.py:154} INFO - [2023-11-24T23:05:37.022+0000] {dag.py:3722} INFO - Setting next_dagrun for outcomes_dag to 2023-11-24T00:00:00+00:00, run_after=2023-11-25T00:00:00+00:00
+[2023-11-24T23:05:37.045+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/outcomes_dag.py took 1.411 seconds
+[2023-11-24T23:06:07.293+0000] {processor.py:157} INFO - Started process (PID=169) to work on /opt/airflow/dags/outcomes_dag.py
+[2023-11-24T23:06:07.306+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/outcomes_dag.py for tasks to queue
+[2023-11-24T23:06:07.319+0000] {logging_mixin.py:154} INFO - [2023-11-24T23:06:07.318+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/outcomes_dag.py
+[2023-11-24T23:06:08.110+0000] {processor.py:839} INFO - DAG(s) dict_keys(['outcomes_dag']) retrieved from /opt/airflow/dags/outcomes_dag.py
+[2023-11-24T23:06:08.136+0000] {logging_mixin.py:154} INFO - [2023-11-24T23:06:08.135+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-24T23:06:08.169+0000] {logging_mixin.py:154} INFO - [2023-11-24T23:06:08.168+0000] {dag.py:3722} INFO - Setting next_dagrun for outcomes_dag to 2023-11-24T00:00:00+00:00, run_after=2023-11-25T00:00:00+00:00
+[2023-11-24T23:06:08.201+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/outcomes_dag.py took 0.914 seconds
+[2023-11-24T23:06:38.548+0000] {processor.py:157} INFO - Started process (PID=178) to work on /opt/airflow/dags/outcomes_dag.py
+[2023-11-24T23:06:38.551+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/outcomes_dag.py for tasks to queue
+[2023-11-24T23:06:38.559+0000] {logging_mixin.py:154} INFO - [2023-11-24T23:06:38.557+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/outcomes_dag.py
+[2023-11-24T23:06:39.308+0000] {processor.py:839} INFO - DAG(s) dict_keys(['outcomes_dag']) retrieved from /opt/airflow/dags/outcomes_dag.py
+[2023-11-24T23:06:39.336+0000] {logging_mixin.py:154} INFO - [2023-11-24T23:06:39.335+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2023-11-24T23:06:39.364+0000] {logging_mixin.py:154} INFO - [2023-11-24T23:06:39.363+0000] {dag.py:3722} INFO - Setting next_dagrun for outcomes_dag to 2023-11-24T00:00:00+00:00, run_after=2023-11-25T00:00:00+00:00
+[2023-11-24T23:06:39.386+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/outcomes_dag.py took 0.850 seconds
