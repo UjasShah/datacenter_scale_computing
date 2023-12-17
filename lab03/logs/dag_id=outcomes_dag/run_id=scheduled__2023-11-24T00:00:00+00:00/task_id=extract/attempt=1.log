@@ -1,0 +1,65 @@
+[2023-11-25T00:28:40.801+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.extract scheduled__2023-11-24T00:00:00+00:00 [queued]>
+[2023-11-25T00:28:40.812+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.extract scheduled__2023-11-24T00:00:00+00:00 [queued]>
+[2023-11-25T00:28:40.813+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-25T00:28:40.828+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): extract> on 2023-11-24 00:00:00+00:00
+[2023-11-25T00:28:40.834+0000] {standard_task_runner.py:57} INFO - Started process 176 to run task
+[2023-11-25T00:28:40.838+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'extract', 'scheduled__2023-11-24T00:00:00+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmphd5opshv']
+[2023-11-25T00:28:40.842+0000] {standard_task_runner.py:85} INFO - Job 10: Subtask extract
+[2023-11-25T00:28:40.897+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.extract scheduled__2023-11-24T00:00:00+00:00 [running]> on host 8e76b4343da0
+[2023-11-25T00:28:40.998+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2023-11-24T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-24T00:00:00+00:00'
+[2023-11-25T00:28:42.045+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-11-25T00:28:42.057+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=outcomes_dag, task_id=extract, execution_date=20231124T000000, start_date=20231125T002840, end_date=20231125T002842
+[2023-11-25T00:28:42.104+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-25T00:28:42.124+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-11-25T20:28:06.802+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.extract scheduled__2023-11-24T00:00:00+00:00 [queued]>
+[2023-11-25T20:28:06.814+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.extract scheduled__2023-11-24T00:00:00+00:00 [queued]>
+[2023-11-25T20:28:06.815+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-25T20:28:06.830+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): extract> on 2023-11-24 00:00:00+00:00
+[2023-11-25T20:28:06.836+0000] {standard_task_runner.py:57} INFO - Started process 131 to run task
+[2023-11-25T20:28:06.839+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'extract', 'scheduled__2023-11-24T00:00:00+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmpkmq0hlf4']
+[2023-11-25T20:28:06.843+0000] {standard_task_runner.py:85} INFO - Job 17: Subtask extract
+[2023-11-25T20:28:06.893+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.extract scheduled__2023-11-24T00:00:00+00:00 [running]> on host 17ac1e2d02c6
+[2023-11-25T20:28:06.982+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2023-11-24T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-24T00:00:00+00:00'
+[2023-11-25T20:28:08.065+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-11-25T20:28:08.078+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=outcomes_dag, task_id=extract, execution_date=20231124T000000, start_date=20231125T202806, end_date=20231125T202808
+[2023-11-25T20:28:08.104+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-25T20:28:08.128+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-11-26T00:23:07.184+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.extract scheduled__2023-11-24T00:00:00+00:00 [queued]>
+[2023-11-26T00:23:07.313+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.extract scheduled__2023-11-24T00:00:00+00:00 [queued]>
+[2023-11-26T00:23:07.314+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-26T00:23:07.346+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): extract> on 2023-11-24 00:00:00+00:00
+[2023-11-26T00:23:07.358+0000] {standard_task_runner.py:57} INFO - Started process 187 to run task
+[2023-11-26T00:23:07.363+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'extract', 'scheduled__2023-11-24T00:00:00+00:00', '--job-id', '34', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmpoe6eq0fe']
+[2023-11-26T00:23:07.369+0000] {standard_task_runner.py:85} INFO - Job 34: Subtask extract
+[2023-11-26T00:23:07.465+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.extract scheduled__2023-11-24T00:00:00+00:00 [running]> on host decfc1fe5c09
+[2023-11-26T00:23:07.820+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2023-11-24T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-24T00:00:00+00:00'
+[2023-11-26T00:23:09.057+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-11-26T00:23:09.071+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=outcomes_dag, task_id=extract, execution_date=20231124T000000, start_date=20231126T002307, end_date=20231126T002309
+[2023-11-26T00:23:09.134+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-26T00:23:09.172+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-11-26T01:53:44.379+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.extract scheduled__2023-11-24T00:00:00+00:00 [queued]>
+[2023-11-26T01:53:44.390+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.extract scheduled__2023-11-24T00:00:00+00:00 [queued]>
+[2023-11-26T01:53:44.395+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-26T01:53:44.414+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): extract> on 2023-11-24 00:00:00+00:00
+[2023-11-26T01:53:44.421+0000] {standard_task_runner.py:57} INFO - Started process 213 to run task
+[2023-11-26T01:53:44.425+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'extract', 'scheduled__2023-11-24T00:00:00+00:00', '--job-id', '31', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmp4ktuvpzm']
+[2023-11-26T01:53:44.429+0000] {standard_task_runner.py:85} INFO - Job 31: Subtask extract
+[2023-11-26T01:53:44.484+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.extract scheduled__2023-11-24T00:00:00+00:00 [running]> on host 2011df1a4519
+[2023-11-26T01:53:44.582+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2023-11-24T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-24T00:00:00+00:00'
+[2023-11-26T01:53:45.522+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-11-26T01:53:45.537+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=outcomes_dag, task_id=extract, execution_date=20231124T000000, start_date=20231126T015344, end_date=20231126T015345
+[2023-11-26T01:53:45.609+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-26T01:53:45.671+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-11-26T02:44:47.163+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.extract scheduled__2023-11-24T00:00:00+00:00 [queued]>
+[2023-11-26T02:44:47.177+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.extract scheduled__2023-11-24T00:00:00+00:00 [queued]>
+[2023-11-26T02:44:47.178+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-26T02:44:47.211+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): extract> on 2023-11-24 00:00:00+00:00
+[2023-11-26T02:44:47.225+0000] {standard_task_runner.py:57} INFO - Started process 247 to run task
+[2023-11-26T02:44:47.235+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'extract', 'scheduled__2023-11-24T00:00:00+00:00', '--job-id', '47', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmpbp1xxzmo']
+[2023-11-26T02:44:47.241+0000] {standard_task_runner.py:85} INFO - Job 47: Subtask extract
+[2023-11-26T02:44:47.317+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.extract scheduled__2023-11-24T00:00:00+00:00 [running]> on host d8c33f99ee50
+[2023-11-26T02:44:47.414+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2023-11-24T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-24T00:00:00+00:00'
+[2023-11-26T02:44:48.419+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-11-26T02:44:48.436+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=outcomes_dag, task_id=extract, execution_date=20231124T000000, start_date=20231126T024447, end_date=20231126T024448
+[2023-11-26T02:44:48.500+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-26T02:44:48.564+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

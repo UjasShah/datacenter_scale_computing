@@ -1,0 +1,23 @@
+[2023-11-23T18:58:39.290+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.extract manual__2023-11-23T18:58:30.971306+00:00 [queued]>
+[2023-11-23T18:58:39.375+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.extract manual__2023-11-23T18:58:30.971306+00:00 [queued]>
+[2023-11-23T18:58:39.377+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-23T18:58:39.442+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): extract> on 2023-11-23 18:58:30.971306+00:00
+[2023-11-23T18:58:39.460+0000] {standard_task_runner.py:57} INFO - Started process 152 to run task
+[2023-11-23T18:58:39.488+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'extract', 'manual__2023-11-23T18:58:30.971306+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmp6ocefmm1']
+[2023-11-23T18:58:39.502+0000] {standard_task_runner.py:85} INFO - Job 3: Subtask extract
+[2023-11-23T18:58:39.820+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.extract manual__2023-11-23T18:58:30.971306+00:00 [running]> on host b9e8eee69786
+[2023-11-23T18:58:40.102+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2023-11-23T18:58:30.971306+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-23T18:58:30.971306+00:00'
+[2023-11-23T18:58:40.113+0000] {socrata.py:63} WARNING - Requests made without an app_token will be subject to strict throttling limits.
+[2023-11-23T18:58:40.115+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl_scripts/extract.py", line 18, in extract_data
+    if os.listdir(EXTRACT_DIR) == []:
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/airflow/data/extracted'
+[2023-11-23T18:58:40.169+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=outcomes_dag, task_id=extract, execution_date=20231123T185830, start_date=20231123T185839, end_date=20231123T185840
+[2023-11-23T18:58:40.219+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 3 for task extract ([Errno 2] No such file or directory: '/opt/airflow/data/extracted'; 152)
+[2023-11-23T18:58:40.274+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-23T18:58:40.422+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

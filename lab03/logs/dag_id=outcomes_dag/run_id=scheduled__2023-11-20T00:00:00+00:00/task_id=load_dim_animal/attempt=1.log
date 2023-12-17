@@ -1,0 +1,26 @@
+[2023-11-26T02:22:58.586+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.load_dim_animal scheduled__2023-11-20T00:00:00+00:00 [queued]>
+[2023-11-26T02:22:58.625+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.load_dim_animal scheduled__2023-11-20T00:00:00+00:00 [queued]>
+[2023-11-26T02:22:58.628+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-26T02:22:58.664+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): load_dim_animal> on 2023-11-20 00:00:00+00:00
+[2023-11-26T02:22:58.683+0000] {standard_task_runner.py:57} INFO - Started process 725 to run task
+[2023-11-26T02:22:58.706+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'load_dim_animal', 'scheduled__2023-11-20T00:00:00+00:00', '--job-id', '62', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmp9e4qzvvt']
+[2023-11-26T02:22:58.724+0000] {standard_task_runner.py:85} INFO - Job 62: Subtask load_dim_animal
+[2023-11-26T02:22:58.873+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.load_dim_animal scheduled__2023-11-20T00:00:00+00:00 [running]> on host 2011df1a4519
+[2023-11-26T02:22:59.053+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='load_dim_animal' AIRFLOW_CTX_EXECUTION_DATE='2023-11-20T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-20T00:00:00+00:00'
+[2023-11-26T02:23:01.961+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-11-26T02:23:01.974+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=outcomes_dag, task_id=load_dim_animal, execution_date=20231120T000000, start_date=20231126T022258, end_date=20231126T022301
+[2023-11-26T02:23:01.999+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-26T02:23:02.019+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-11-26T02:42:46.049+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.load_dim_animal scheduled__2023-11-20T00:00:00+00:00 [queued]>
+[2023-11-26T02:42:46.064+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.load_dim_animal scheduled__2023-11-20T00:00:00+00:00 [queued]>
+[2023-11-26T02:42:46.065+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-26T02:42:46.090+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): load_dim_animal> on 2023-11-20 00:00:00+00:00
+[2023-11-26T02:42:46.100+0000] {standard_task_runner.py:57} INFO - Started process 165 to run task
+[2023-11-26T02:42:46.109+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'load_dim_animal', 'scheduled__2023-11-20T00:00:00+00:00', '--job-id', '27', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmp9ffa431v']
+[2023-11-26T02:42:46.115+0000] {standard_task_runner.py:85} INFO - Job 27: Subtask load_dim_animal
+[2023-11-26T02:42:46.224+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.load_dim_animal scheduled__2023-11-20T00:00:00+00:00 [running]> on host d8c33f99ee50
+[2023-11-26T02:42:46.385+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='load_dim_animal' AIRFLOW_CTX_EXECUTION_DATE='2023-11-20T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-20T00:00:00+00:00'
+[2023-11-26T02:42:52.129+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-11-26T02:42:52.149+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=outcomes_dag, task_id=load_dim_animal, execution_date=20231120T000000, start_date=20231126T024246, end_date=20231126T024252
+[2023-11-26T02:42:52.183+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-26T02:42:52.210+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
