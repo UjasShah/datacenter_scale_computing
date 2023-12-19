@@ -1,0 +1,81 @@
+[2023-12-19T04:22:00.266+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.create_cluster scheduled__2023-12-18T00:00:00+00:00 [queued]>
+[2023-12-19T04:22:00.282+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.create_cluster scheduled__2023-12-18T00:00:00+00:00 [queued]>
+[2023-12-19T04:22:00.282+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-12-19T04:22:00.296+0000] {taskinstance.py:1382} INFO - Executing <Task(DataprocCreateClusterOperator): create_cluster> on 2023-12-18 00:00:00+00:00
+[2023-12-19T04:22:00.312+0000] {standard_task_runner.py:57} INFO - Started process 185 to run task
+[2023-12-19T04:22:00.345+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'create_cluster', 'scheduled__2023-12-18T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmp3zh_47t9']
+[2023-12-19T04:22:00.370+0000] {standard_task_runner.py:85} INFO - Job 3: Subtask create_cluster
+[2023-12-19T04:22:00.552+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.create_cluster scheduled__2023-12-18T00:00:00+00:00 [running]> on host 4ab13aa5d6a6
+[2023-12-19T04:22:00.840+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='create_cluster' AIRFLOW_CTX_EXECUTION_DATE='2023-12-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-12-18T00:00:00+00:00'
+[2023-12-19T04:22:00.841+0000] {dataproc.py:637} INFO - Creating cluster: shelter-cluster
+[2023-12-19T04:22:00.872+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/operators/dataproc.py", line 638, in execute
+    hook = DataprocHook(gcp_conn_id=self.gcp_conn_id, impersonation_chain=self.impersonation_chain)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/dataproc.py", line 209, in __init__
+    super().__init__(gcp_conn_id=gcp_conn_id, impersonation_chain=impersonation_chain)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/common/hooks/base_google.py", line 242, in __init__
+    self.extras: dict = self.get_connection(self.gcp_conn_id).extra_dejson
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/hooks/base.py", line 72, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/connection.py", line 477, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `google_cloud_default` isn't defined
+[2023-12-19T04:22:00.883+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=outcomes_dag, task_id=create_cluster, execution_date=20231218T000000, start_date=20231219T042200, end_date=20231219T042200
+[2023-12-19T04:22:00.940+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 3 for task create_cluster (The conn_id `google_cloud_default` isn't defined; 185)
+[2023-12-19T04:22:00.984+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-12-19T04:22:01.006+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-12-19T06:07:27.611+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.create_cluster scheduled__2023-12-18T00:00:00+00:00 [queued]>
+[2023-12-19T06:07:27.933+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.create_cluster scheduled__2023-12-18T00:00:00+00:00 [queued]>
+[2023-12-19T06:07:27.934+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-12-19T06:07:28.713+0000] {taskinstance.py:1382} INFO - Executing <Task(DataprocCreateClusterOperator): create_cluster> on 2023-12-18 00:00:00+00:00
+[2023-12-19T06:07:29.648+0000] {standard_task_runner.py:57} INFO - Started process 639 to run task
+[2023-12-19T06:07:29.965+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'create_cluster', 'scheduled__2023-12-18T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmpan7j4dsv']
+[2023-12-19T06:07:30.754+0000] {standard_task_runner.py:85} INFO - Job 4: Subtask create_cluster
+[2023-12-19T06:07:40.319+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.create_cluster scheduled__2023-12-18T00:00:00+00:00 [running]> on host 390eec0a992a
+[2023-12-19T06:07:48.549+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='create_cluster' AIRFLOW_CTX_EXECUTION_DATE='2023-12-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-12-18T00:00:00+00:00'
+[2023-12-19T06:07:48.584+0000] {dataproc.py:637} INFO - Creating cluster: shelter-cluster
+[2023-12-19T06:07:50.234+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/operators/dataproc.py", line 638, in execute
+    hook = DataprocHook(gcp_conn_id=self.gcp_conn_id, impersonation_chain=self.impersonation_chain)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/dataproc.py", line 209, in __init__
+    super().__init__(gcp_conn_id=gcp_conn_id, impersonation_chain=impersonation_chain)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/common/hooks/base_google.py", line 242, in __init__
+    self.extras: dict = self.get_connection(self.gcp_conn_id).extra_dejson
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/hooks/base.py", line 72, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/connection.py", line 477, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `google_cloud_default` isn't defined
+[2023-12-19T06:07:50.710+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=outcomes_dag, task_id=create_cluster, execution_date=20231218T000000, start_date=20231219T060727, end_date=20231219T060750
+[2023-12-19T06:07:52.651+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 4 for task create_cluster (The conn_id `google_cloud_default` isn't defined; 639)
+[2023-12-19T06:07:53.066+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-12-19T06:07:53.607+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-12-19T06:24:21.569+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.create_cluster scheduled__2023-12-18T00:00:00+00:00 [queued]>
+[2023-12-19T06:24:21.590+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.create_cluster scheduled__2023-12-18T00:00:00+00:00 [queued]>
+[2023-12-19T06:24:21.591+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-12-19T06:24:21.625+0000] {taskinstance.py:1382} INFO - Executing <Task(DataprocCreateClusterOperator): create_cluster> on 2023-12-18 00:00:00+00:00
+[2023-12-19T06:24:21.642+0000] {standard_task_runner.py:57} INFO - Started process 81 to run task
+[2023-12-19T06:24:21.649+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'create_cluster', 'scheduled__2023-12-18T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmpfhv0o6oi']
+[2023-12-19T06:24:21.660+0000] {standard_task_runner.py:85} INFO - Job 3: Subtask create_cluster
+[2023-12-19T06:24:21.877+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.create_cluster scheduled__2023-12-18T00:00:00+00:00 [running]> on host 50409cb136fe
+[2023-12-19T06:24:22.014+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='create_cluster' AIRFLOW_CTX_EXECUTION_DATE='2023-12-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-12-18T00:00:00+00:00'
+[2023-12-19T06:24:22.017+0000] {dataproc.py:637} INFO - Creating cluster: shelter-cluster
+[2023-12-19T06:24:22.082+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/operators/dataproc.py", line 638, in execute
+    hook = DataprocHook(gcp_conn_id=self.gcp_conn_id, impersonation_chain=self.impersonation_chain)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/dataproc.py", line 209, in __init__
+    super().__init__(gcp_conn_id=gcp_conn_id, impersonation_chain=impersonation_chain)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/common/hooks/base_google.py", line 242, in __init__
+    self.extras: dict = self.get_connection(self.gcp_conn_id).extra_dejson
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/hooks/base.py", line 72, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/connection.py", line 477, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `google_cloud_default` isn't defined
+[2023-12-19T06:24:22.090+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=outcomes_dag, task_id=create_cluster, execution_date=20231218T000000, start_date=20231219T062421, end_date=20231219T062422
+[2023-12-19T06:24:22.113+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 3 for task create_cluster (The conn_id `google_cloud_default` isn't defined; 81)
+[2023-12-19T06:24:22.158+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-12-19T06:24:22.197+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,13 @@
+[2023-12-17T15:52:14.673+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.extract scheduled__2023-11-28T00:00:00+00:00 [queued]>
+[2023-12-17T15:52:14.694+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.extract scheduled__2023-11-28T00:00:00+00:00 [queued]>
+[2023-12-17T15:52:14.696+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-12-17T15:52:14.760+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): extract> on 2023-11-28 00:00:00+00:00
+[2023-12-17T15:52:14.780+0000] {standard_task_runner.py:57} INFO - Started process 846 to run task
+[2023-12-17T15:52:14.786+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'extract', 'scheduled__2023-11-28T00:00:00+00:00', '--job-id', '164', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmp4_nawv6t']
+[2023-12-17T15:52:14.792+0000] {standard_task_runner.py:85} INFO - Job 164: Subtask extract
+[2023-12-17T15:52:14.883+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.extract scheduled__2023-11-28T00:00:00+00:00 [running]> on host 7f0547651eb4
+[2023-12-17T15:52:15.022+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2023-11-28T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-28T00:00:00+00:00'
+[2023-12-17T15:52:19.534+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-12-17T15:52:19.558+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=outcomes_dag, task_id=extract, execution_date=20231128T000000, start_date=20231217T155214, end_date=20231217T155219
+[2023-12-17T15:52:19.631+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-12-17T15:52:19.710+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,54 @@
+[2023-12-19T04:32:22.954+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.create_cluster manual__2023-12-19T04:21:50.677770+00:00 [queued]>
+[2023-12-19T04:32:22.965+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.create_cluster manual__2023-12-19T04:21:50.677770+00:00 [queued]>
+[2023-12-19T04:32:22.965+0000] {taskinstance.py:1361} INFO - Starting attempt 4 of 4
+[2023-12-19T04:32:22.983+0000] {taskinstance.py:1382} INFO - Executing <Task(DataprocCreateClusterOperator): create_cluster> on 2023-12-19 04:21:50.677770+00:00
+[2023-12-19T04:32:22.989+0000] {standard_task_runner.py:57} INFO - Started process 359 to run task
+[2023-12-19T04:32:22.993+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'create_cluster', 'manual__2023-12-19T04:21:50.677770+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmpgve59ohr']
+[2023-12-19T04:32:22.996+0000] {standard_task_runner.py:85} INFO - Job 10: Subtask create_cluster
+[2023-12-19T04:32:23.071+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.create_cluster manual__2023-12-19T04:21:50.677770+00:00 [running]> on host 4ab13aa5d6a6
+[2023-12-19T04:32:23.215+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='create_cluster' AIRFLOW_CTX_EXECUTION_DATE='2023-12-19T04:21:50.677770+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-12-19T04:21:50.677770+00:00'
+[2023-12-19T04:32:23.240+0000] {dataproc.py:637} INFO - Creating cluster: shelter-cluster
+[2023-12-19T04:32:23.257+0000] {connection.py:232} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2023-12-19T04:32:23.264+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-12-19T04:32:26.911+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/api_core/grpc_helpers.py", line 75, in error_remapped_callable
+    return callable_(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/grpc/_channel.py", line 1161, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/home/airflow/.local/lib/python3.8/site-packages/grpc/_channel.py", line 1004, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.INVALID_ARGUMENT
+	details = "User not authorized to act as service account '680742956147-compute@developer.gserviceaccount.com'. To act as a service account, user must have one of [Owner, Editor, Service Account Actor] roles. See https://cloud.google.com/iam/docs/understanding-service-accounts for additional details."
+	debug_error_string = "UNKNOWN:Error received from peer ipv4:142.250.183.42:443 {created_time:"2023-12-19T04:32:26.906364372+00:00", grpc_status:3, grpc_message:"User not authorized to act as service account \'680742956147-compute@developer.gserviceaccount.com\'. To act as a service account, user must have one of [Owner, Editor, Service Account Actor] roles. See https://cloud.google.com/iam/docs/understanding-service-accounts for additional details."}"
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/operators/dataproc.py", line 651, in execute
+    operation = self._create_cluster(hook)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/operators/dataproc.py", line 567, in _create_cluster
+    return hook.create_cluster(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/common/hooks/base_google.py", line 475, in inner_wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/dataproc.py", line 324, in create_cluster
+    result = client.create_cluster(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/dataproc_v1/services/cluster_controller/client.py", line 632, in create_cluster
+    response = rpc(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/api_core/retry.py", line 366, in retry_wrapped_func
+    return retry_target(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/api_core/retry.py", line 204, in retry_target
+    return target()
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/api_core/timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/api_core/grpc_helpers.py", line 77, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.InvalidArgument: 400 User not authorized to act as service account '680742956147-compute@developer.gserviceaccount.com'. To act as a service account, user must have one of [Owner, Editor, Service Account Actor] roles. See https://cloud.google.com/iam/docs/understanding-service-accounts for additional details.
+[2023-12-19T04:32:26.953+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=outcomes_dag, task_id=create_cluster, execution_date=20231219T042150, start_date=20231219T043222, end_date=20231219T043226
+[2023-12-19T04:32:26.988+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 10 for task create_cluster (400 User not authorized to act as service account '680742956147-compute@developer.gserviceaccount.com'. To act as a service account, user must have one of [Owner, Editor, Service Account Actor] roles. See https://cloud.google.com/iam/docs/understanding-service-accounts for additional details.; 359)
+[2023-12-19T04:32:27.130+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-12-19T04:32:27.176+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
