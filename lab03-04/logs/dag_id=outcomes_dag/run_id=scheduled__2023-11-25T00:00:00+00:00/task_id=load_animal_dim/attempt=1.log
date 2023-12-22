@@ -1,0 +1,111 @@
+[2023-11-26T03:06:04.385+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.load_animal_dim scheduled__2023-11-25T00:00:00+00:00 [queued]>
+[2023-11-26T03:06:04.409+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.load_animal_dim scheduled__2023-11-25T00:00:00+00:00 [queued]>
+[2023-11-26T03:06:04.410+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-26T03:06:04.455+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): load_animal_dim> on 2023-11-25 00:00:00+00:00
+[2023-11-26T03:06:04.487+0000] {standard_task_runner.py:57} INFO - Started process 898 to run task
+[2023-11-26T03:06:04.505+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'load_animal_dim', 'scheduled__2023-11-25T00:00:00+00:00', '--job-id', '159', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmpv1soa9ar']
+[2023-11-26T03:06:04.522+0000] {standard_task_runner.py:85} INFO - Job 159: Subtask load_animal_dim
+[2023-11-26T03:06:04.668+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.load_animal_dim scheduled__2023-11-25T00:00:00+00:00 [running]> on host d8c33f99ee50
+[2023-11-26T03:06:05.052+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='load_animal_dim' AIRFLOW_CTX_EXECUTION_DATE='2023-11-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-25T00:00:00+00:00'
+[2023-11-26T03:06:08.060+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-11-26T03:06:08.090+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=outcomes_dag, task_id=load_animal_dim, execution_date=20231125T000000, start_date=20231126T030604, end_date=20231126T030608
+[2023-11-26T03:06:08.144+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-26T03:06:08.169+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-12-17T15:20:44.178+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.load_animal_dim scheduled__2023-11-25T00:00:00+00:00 [queued]>
+[2023-12-17T15:20:44.196+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.load_animal_dim scheduled__2023-11-25T00:00:00+00:00 [queued]>
+[2023-12-17T15:20:44.199+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-12-17T15:20:44.229+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): load_animal_dim> on 2023-11-25 00:00:00+00:00
+[2023-12-17T15:20:44.240+0000] {standard_task_runner.py:57} INFO - Started process 755 to run task
+[2023-12-17T15:20:44.251+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'load_animal_dim', 'scheduled__2023-11-25T00:00:00+00:00', '--job-id', '151', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmp6st9muvz']
+[2023-12-17T15:20:44.261+0000] {standard_task_runner.py:85} INFO - Job 151: Subtask load_animal_dim
+[2023-12-17T15:20:44.366+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.load_animal_dim scheduled__2023-11-25T00:00:00+00:00 [running]> on host 7f0547651eb4
+[2023-12-17T15:20:44.481+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='load_animal_dim' AIRFLOW_CTX_EXECUTION_DATE='2023-11-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-25T00:00:00+00:00'
+[2023-12-17T15:36:01.767+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 462, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/local/lib/python3.8/http/client.py", line 1348, in getresponse
+    response.begin()
+  File "/usr/local/lib/python3.8/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/lib/python3.8/http/client.py", line 285, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/packages/six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 462, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/local/lib/python3.8/http/client.py", line 1348, in getresponse
+    response.begin()
+  File "/usr/local/lib/python3.8/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/lib/python3.8/http/client.py", line 285, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl_scripts/load.py", line 115, in load_dim_animal
+    load_job.result()
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/bigquery/job/base.py", line 922, in result
+    return super(_AsyncJob, self).result(timeout=timeout, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/api_core/future/polling.py", line 256, in result
+    self._blocking_poll(timeout=timeout, retry=retry, polling=polling)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/api_core/future/polling.py", line 137, in _blocking_poll
+    polling(self._done_or_raise)(retry=retry)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/api_core/retry.py", line 366, in retry_wrapped_func
+    return retry_target(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/api_core/retry.py", line 204, in retry_target
+    return target()
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/api_core/future/polling.py", line 119, in _done_or_raise
+    if not self.done(retry=retry):
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/bigquery/job/base.py", line 889, in done
+    self.reload(retry=retry, timeout=timeout)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/bigquery/job/base.py", line 781, in reload
+    api_response = client._call_api(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/bigquery/client.py", line 808, in _call_api
+    return call()
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/_http/__init__.py", line 482, in api_request
+    response = self._make_request(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/_http/__init__.py", line 341, in _make_request
+    return self._do_request(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/_http/__init__.py", line 379, in _do_request
+    return self.http.request(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/auth/transport/requests.py", line 542, in request
+    response = super(AuthorizedSession, self).request(
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[2023-12-17T15:36:02.076+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=outcomes_dag, task_id=load_animal_dim, execution_date=20231125T000000, start_date=20231217T152044, end_date=20231217T153602
+[2023-12-17T15:36:02.237+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 151 for task load_animal_dim (('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')); 755)
+[2023-12-17T15:36:02.318+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-12-17T15:36:02.359+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,107 @@
+[2023-11-26T03:06:04.066+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.load_outcomes_fct scheduled__2023-11-25T00:00:00+00:00 [queued]>
+[2023-11-26T03:06:04.107+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.load_outcomes_fct scheduled__2023-11-25T00:00:00+00:00 [queued]>
+[2023-11-26T03:06:04.109+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-26T03:06:04.174+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): load_outcomes_fct> on 2023-11-25 00:00:00+00:00
+[2023-11-26T03:06:04.184+0000] {standard_task_runner.py:57} INFO - Started process 896 to run task
+[2023-11-26T03:06:04.197+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'load_outcomes_fct', 'scheduled__2023-11-25T00:00:00+00:00', '--job-id', '157', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmpzob3m95y']
+[2023-11-26T03:06:04.202+0000] {standard_task_runner.py:85} INFO - Job 157: Subtask load_outcomes_fct
+[2023-11-26T03:06:04.480+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.load_outcomes_fct scheduled__2023-11-25T00:00:00+00:00 [running]> on host d8c33f99ee50
+[2023-11-26T03:06:04.710+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='load_outcomes_fct' AIRFLOW_CTX_EXECUTION_DATE='2023-11-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-25T00:00:00+00:00'
+[2023-11-26T03:06:08.614+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-11-26T03:06:08.632+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=outcomes_dag, task_id=load_outcomes_fct, execution_date=20231125T000000, start_date=20231126T030604, end_date=20231126T030608
+[2023-11-26T03:06:08.669+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-26T03:06:08.698+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-12-17T15:20:44.049+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: outcomes_dag.load_outcomes_fct scheduled__2023-11-25T00:00:00+00:00 [queued]>
+[2023-12-17T15:20:44.065+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: outcomes_dag.load_outcomes_fct scheduled__2023-11-25T00:00:00+00:00 [queued]>
+[2023-12-17T15:20:44.066+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-12-17T15:20:44.085+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): load_outcomes_fct> on 2023-11-25 00:00:00+00:00
+[2023-12-17T15:20:44.096+0000] {standard_task_runner.py:57} INFO - Started process 754 to run task
+[2023-12-17T15:20:44.113+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'outcomes_dag', 'load_outcomes_fct', 'scheduled__2023-11-25T00:00:00+00:00', '--job-id', '150', '--raw', '--subdir', 'DAGS_FOLDER/outcomes_dag.py', '--cfg-path', '/tmp/tmpuvpqn6av']
+[2023-12-17T15:20:44.125+0000] {standard_task_runner.py:85} INFO - Job 150: Subtask load_outcomes_fct
+[2023-12-17T15:20:44.251+0000] {task_command.py:416} INFO - Running <TaskInstance: outcomes_dag.load_outcomes_fct scheduled__2023-11-25T00:00:00+00:00 [running]> on host 7f0547651eb4
+[2023-12-17T15:20:44.383+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='outcomes_dag' AIRFLOW_CTX_TASK_ID='load_outcomes_fct' AIRFLOW_CTX_EXECUTION_DATE='2023-11-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-25T00:00:00+00:00'
+[2023-12-17T15:35:58.956+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 462, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/local/lib/python3.8/http/client.py", line 1348, in getresponse
+    response.begin()
+  File "/usr/local/lib/python3.8/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/lib/python3.8/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/local/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/local/lib/python3.8/ssl.py", line 1274, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/local/lib/python3.8/ssl.py", line 1132, in read
+    return self._sslobj.read(len, buffer)
+socket.timeout: The read operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/packages/six.py", line 770, in reraise
+    raise value
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 469, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 358, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Read timed out. (read timeout=60)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/api_core/retry.py", line 204, in retry_target
+    return target()
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/_http/__init__.py", line 482, in api_request
+    response = self._make_request(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/_http/__init__.py", line 341, in _make_request
+    return self._do_request(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/_http/__init__.py", line 379, in _do_request
+    return self.http.request(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/auth/transport/requests.py", line 542, in request
+    response = super(AuthorizedSession, self).request(
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/adapters.py", line 532, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Read timed out. (read timeout=60)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl_scripts/load.py", line 50, in load_fct_outcomes
+    if blob.exists() == False:
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/blob.py", line 700, in exists
+    client._get_resource(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/client.py", line 387, in _get_resource
+    return self._connection.api_request(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/_http.py", line 72, in api_request
+    return call()
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/api_core/retry.py", line 366, in retry_wrapped_func
+    return retry_target(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/api_core/retry.py", line 220, in retry_target
+    raise exceptions.RetryError(
+google.api_core.exceptions.RetryError: Deadline of 120.0s exceeded while calling target function, last exception: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Read timed out. (read timeout=60)
+[2023-12-17T15:36:00.984+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=outcomes_dag, task_id=load_outcomes_fct, execution_date=20231125T000000, start_date=20231217T152044, end_date=20231217T153600
+[2023-12-17T15:36:01.301+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 150 for task load_outcomes_fct (Deadline of 120.0s exceeded while calling target function, last exception: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Read timed out. (read timeout=60); 754)
+[2023-12-17T15:36:01.882+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-12-17T15:36:02.012+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
