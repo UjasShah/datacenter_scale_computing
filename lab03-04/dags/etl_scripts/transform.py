@@ -1,8 +1,9 @@
-# from dotenv import load_dotenv
 from pyspark.sql import SparkSession, functions as F
 from google.cloud import storage
+import sys
 
-# load_dotenv()
+date = sys.argv[1]
+
 
 spark = SparkSession.builder.appName("animal_shelter").getOrCreate()
 
@@ -134,7 +135,7 @@ def prep_outcomes_fct(data):
     outcomes_fct = data.select("animal_id", 'date_id','time','outcome_type_id','outcome_subtype', 'is_fixed')
     return outcomes_fct
 
-transform_data('2023-11-01')
+transform_data(date)
     
 
 # # Lab03 transform file

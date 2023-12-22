@@ -17,7 +17,7 @@ def load_dim_dates(date):
     if blob.exists() == False:
         return
     
-    data = f"gs://outcomes_bucket/transformed/{date}_dim_dates.csv"
+    data = f"gs://outcomes_bucket/transformed/{date}_dim_dates.csv/*"
     table_id = "outcomes.dim_dates"
     try:
         client.get_table(table_id)
@@ -50,7 +50,7 @@ def load_fct_outcomes(date):
     if blob.exists() == False:
         return
 
-    data = f"gs://outcomes_bucket/transformed/{date}_fct_outcomes.csv"
+    data = f"gs://outcomes_bucket/transformed/{date}_fct_outcomes.csv/*"
     table_id = "outcomes.fct_outcomes"
     try:
         client.get_table(table_id)
@@ -83,7 +83,7 @@ def load_dim_outcome_types(date):
     if blob.exists() == False:
         return
     
-    data = f"gs://outcomes_bucket/transformed/{date}_dim_outcome_types.csv"
+    data = f"gs://outcomes_bucket/transformed/{date}_dim_outcome_types.csv/*"
     table_id = "outcomes.dim_outcome_types"
 
     try:
@@ -101,7 +101,7 @@ def load_dim_outcome_types(date):
         load_job.result()
 
 def load_dim_animal():
-    data = f"gs://outcomes_bucket/transformed/dim_animal_agg.csv"
+    data = f"gs://outcomes_bucket/transformed/dim_animal_agg.csv/*"
     table_id = "outcomes.dim_animal"
 
     job_config = bigquery.LoadJobConfig(
